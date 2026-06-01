@@ -1,0 +1,92 @@
+@import './tokens.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: var(--pc-chassis);
+  color: var(--pc-text);
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+@layer components {
+  .panel {
+    position: relative;
+    background: var(--pc-chassis-2);
+    border-radius: 14px;
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.85) inset,
+      0 0 0 1px rgba(30, 40, 60, 0.04),
+      0 2px 4px var(--pc-shadow-glow),
+      0 16px 36px var(--pc-shadow-soft),
+      0 4px 10px var(--pc-shadow-glow);
+  }
+
+  .panel-inset {
+    background: var(--pc-chassis);
+    border-radius: 10px;
+    box-shadow:
+      inset 0 1px 2px var(--pc-shadow-deep),
+      inset 0 0 0 1px rgba(30, 40, 60, 0.05);
+  }
+
+  .panel-title {
+    @apply font-mono text-pc-text-dim uppercase;
+    letter-spacing: 0.18em;
+    font-size: 11px;
+  }
+
+  .panel-divider {
+    height: 1px;
+    background: var(--pc-chassis-edge);
+  }
+
+  .led-on {
+    box-shadow: 0 0 8px 1px var(--pc-purple-glow);
+  }
+
+  .center-stage-platform {
+    background: var(--pc-chassis-2);
+    border-radius: 22px;
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.9) inset,
+      0 0 0 1px rgba(30, 40, 60, 0.04),
+      0 4px 10px var(--pc-shadow-glow),
+      0 24px 60px var(--pc-shadow-soft);
+  }
+
+  .card-lift {
+    transition: box-shadow 220ms ease, transform 220ms ease;
+  }
+  .card-lift:hover {
+    transform: translateY(-1px);
+  }
+}
+
+/* Chassis grain — very subtle film-grain noise overlay (v3 §10.5) */
+.chassis-grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.7 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+@keyframes pcReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

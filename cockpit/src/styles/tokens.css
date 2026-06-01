@@ -1,0 +1,41 @@
+:root {
+  /* Chassis — cool gray-blue, matching Spectra One reference */
+  --pc-chassis: #E7EBEF;
+  --pc-chassis-2: #F4F6F8;
+  --pc-chassis-edge: #C9CFD5;
+  --pc-chassis-warm: #F2EEE7; /* warmer cream variant for the meter/right column */
+  --pc-shadow-soft: rgba(30, 40, 60, 0.14);
+  --pc-shadow-deep: rgba(30, 40, 60, 0.24);
+  --pc-shadow-glow: rgba(30, 40, 60, 0.07);
+
+  /* Text */
+  --pc-text: #1a1a24;
+  --pc-text-dim: #6b6b7a;
+  --pc-text-faint: #a8a8b4;
+
+  /* Module accents */
+  --pc-pim: #5b8def;
+  --pc-mdm: #9e7bd9;
+  --pc-dam: #f38b6c;
+  --pc-cdp: #7bc9a7;
+  --pc-dxp: #a06cd5;
+  --pc-commerce: #e8b547;
+
+  /* Platform */
+  --pc-purple: #5924ab;
+  --pc-purple-bright: #8b5bd6;
+  --pc-purple-glow: rgba(139, 91, 214, 0.45);
+  --pc-gold: #f5c842;
+  --pc-gold-amber: #e8b547;
+  --pc-gold-glow: rgba(232, 181, 71, 0.55);
+
+  /* Knob materials */
+  --pc-metal-light: #fafafb;
+  --pc-metal-mid: #d6d6dc;
+  --pc-metal-edge: #9a9aa4;
+  --pc-metal-dark: #5a5a66;
+
+  /* Status */
+  --pc-red: #d94a4a;
+  --pc-green: #58b389;
+}
