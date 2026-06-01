@@ -7,7 +7,13 @@ import { viteSingleFile } from 'vite-plugin-singlefile'
 // and the regular build are unaffected.
 const SINGLE_FILE = process.env.BUILD_TARGET === 'single'
 
+// `GH_PAGES=true` builds for the GitHub Pages project site, which is served
+// under the `/pimcore-intro/` subpath. Dev, preview, and the single-file build
+// keep the default root base.
+const GH_PAGES = process.env.GH_PAGES === 'true'
+
 export default defineConfig({
+  base: GH_PAGES ? '/pimcore-intro/' : '/',
   plugins: [react(), ...(SINGLE_FILE ? [viteSingleFile()] : [])],
   server: { port: 5173, host: true },
   build: {
